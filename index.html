@@ -8,35 +8,168 @@
   <link rel="icon" href="icon-192.png" />
   <meta name="theme-color" content="#D4380E" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #212529;
-      color: #fff;
-      margin: 0; padding: 20px;
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
     }
-    .banner {
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
       background-color: #D4380E;
-      padding: 15px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img.logo {
+      height: 50px;
+      width: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    section.banner {
+      background: #E04A1E;
+      padding: 20px;
       border-radius: 10px;
-      margin-bottom: 20px;
       text-align: center;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+    section.agendamento {
+      background-color: #1E1E1E;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(212, 56, 14, 0.7);
+    }
+    section.agendamento h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #D4380E;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    form input, form select, form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    form input, form select {
+      background-color: #333;
+      color: #fff;
+    }
+    form button {
+      background-color: #D4380E;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #a52b0a;
+    }
+    footer {
+      margin: 40px 0 20px;
+      text-align: center;
+      color: #aaa;
+    }
+    .logos {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .logos img {
+      height: 60px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
     }
   </style>
 </head>
 <body>
-  <div class="banner">OverTork – Lavagem Premium</div>
-  <p>Seu serviço de lavagem automotiva premium e móvel, na comodidade da sua casa.</p>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(() => console.log('Service Worker registrado com sucesso!'))
-          .catch(err => console.error('Falha ao registrar Service Worker:', err));
-      });
-    }
-  </script>
+<header>
+  <img src="icon-192.png" alt="OverTork Logo" class="logo" />
+  <h1>OverTork</h1>
+</header>
+
+<main>
+  <section class="banner">
+    Lavagem Premium e Atendimento Móvel na Sua Casa
+  </section>
+
+  <section class="agendamento">
+    <h2>Agende seu serviço</h2>
+    <form id="form-agendamento" action="#" method="post">
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+
+      <label for="data">Data desejada</label>
+      <input type="date" id="data" name="data" required />
+
+      <label for="servico">Serviço</label>
+      <select id="servico" name="servico" required>
+        <option value="">Selecione...</option>
+        <option value="lavagem-simples">Lavagem Simples</option>
+        <option value="lavagem-completa">Lavagem Completa</option>
+        <option value="polimento">Polimento</option>
+      </select>
+
+      <button type="submit">Enviar Agendamento</button>
+    </form>
+  </section>
+
+  <section class="logos">
+    <img src="icon-192.png" alt="OverTork Logo" />
+    <!-- Exemplo logos parceiras -->
+    <img src="https://via.placeholder.com/100x60?text=Logo+1" alt="Parceiro 1" />
+    <img src="https://via.placeholder.com/100x60?text=Logo+2" alt="Parceiro 2" />
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 OverTork. Todos os direitos reservados.
+</footer>
+
+<script>
+  const form = document.getElementById('form-agendamento');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Agendamento enviado! (Funcionalidade genérica de teste)');
+    form.reset();
+  });
+
+  // Service Worker (mantém o código do seu PWA)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registrado com sucesso!'))
+        .catch(err => console.error('Falha ao registrar Service Worker:', err));
+    });
+  }
+</script>
+
 </body>
 </html>
