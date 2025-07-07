@@ -1,74 +1,172 @@
-<section class="servicos">
-  <h2>Serviços e Planos</h2>
-  <div class="catalogo">
-    <div class="card">
-      <h3>Tork Simples</h3>
-      <p>Lavagem externa simples e rápida</p>
-      <div class="preco">R$ 60,00</div>
-    </div>
-    <div class="card">
-      <h3>Tork Completo</h3>
-      <p>Lavagem completa externa e interna</p>
-      <div class="preco">R$ 140,00</div>
-    </div>
-    <div class="card">
-      <h3>Tork Polimento</h3>
-      <p>Polimento profissional para pintura</p>
-      <div class="preco">R$ 280,00</div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OverTork - Serviços e Planos</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <meta name="theme-color" content="#D4380E" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #D4380E;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img.logo {
+      height: 50px;
+      width: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav {
+      background:#D4380E;
+      padding:10px;
+      text-align:center;
+    }
+    nav a {
+      color:#fff;
+      margin: 0 15px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    section.servicos {
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    section.servicos h2 {
+      color: #D4380E;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .catalogo {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background-color: #1E1E1E;
+      border: 2px solid #D4380E;
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 0 10px rgba(212, 56, 14, 0.7);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(212, 56, 14, 1);
+    }
+    .card h3, .card h4 {
+      margin: 0 0 12px;
+      color: #D4380E;
+    }
+    .card p {
+      color: #ccc;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .preco {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    .planos .card {
+      width: 200px;
+    }
+    footer {
+      margin: 40px 0 20px;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
 
-  <h3>Planos Mensais</h3>
-  <div class="catalogo planos">
-    <div class="card plano">
-      <h4>Tork Light</h4>
-      <p>Lavagem simples mensal</p>
-      <div class="preco">R$ 150,00</div>
-    </div>
-    <div class="card plano">
-      <h4>Tork Full</h4>
-      <p>Lavagem completa mensal</p>
-      <div class="preco">R$ 350,00</div>
-    </div>
-  </div>
-</section>
+<header>
+  <img src="icon-192.png" alt="OverTork Logo" class="logo" />
+  <h1>OverTork</h1>
+</header>
 
-<style>
-  .catalogo {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+<nav>
+  <a href="index.html">Home</a>
+  <a href="agendamento.html">Agendamento</a>
+  <a href="servicos.html">Serviços</a>
+</nav>
+
+<main>
+  <section class="servicos">
+    <h2>Serviços e Planos</h2>
+    <div class="catalogo">
+      <div class="card">
+        <h3>Tork Simples</h3>
+        <p>Lavagem externa simples e rápida</p>
+        <div class="preco">R$ 60,00</div>
+      </div>
+      <div class="card">
+        <h3>Tork Completo</h3>
+        <p>Lavagem completa externa e interna</p>
+        <div class="preco">R$ 140,00</div>
+      </div>
+      <div class="card">
+        <h3>Tork Polimento</h3>
+        <p>Polimento profissional para pintura</p>
+        <div class="preco">R$ 280,00</div>
+      </div>
+    </div>
+
+    <h3>Planos Mensais</h3>
+    <div class="catalogo planos">
+      <div class="card plano">
+        <h4>Tork Light</h4>
+        <p>Lavagem simples mensal</p>
+        <div class="preco">R$ 150,00</div>
+      </div>
+      <div class="card plano">
+        <h4>Tork Full</h4>
+        <p>Lavagem completa mensal</p>
+        <div class="preco">R$ 350,00</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 OverTork. Todos os direitos reservados.
+</footer>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registrado com sucesso!'))
+        .catch(err => console.error('Falha ao registrar Service Worker:', err));
+    });
   }
-  .card {
-    background-color: #1E1E1E;
-    border: 2px solid #D4380E;
-    border-radius: 12px;
-    padding: 20px;
-    width: 260px;
-    box-shadow: 0 0 10px rgba(212, 56, 14, 0.7);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(212, 56, 14, 1);
-  }
-  .card h3, .card h4 {
-    margin: 0 0 12px;
-    color: #D4380E;
-  }
-  .card p {
-    color: #ccc;
-    margin-bottom: 16px;
-    font-size: 1rem;
-  }
-  .preco {
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #fff;
-  }
-  .planos .card {
-    width: 200px;
-  }
-</style>
+</script>
+
+</body>
+</html>
