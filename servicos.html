@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OverTork - Serviços e Planos</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <meta name="theme-color" content="#D4380E" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #D4380E;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img.logo {
+      height: 50px;
+      width: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav {
+      background:#D4380E;
+      padding:10px;
+      text-align:center;
+    }
+    nav a {
+      color:#fff;
+      margin: 0 15px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    section.servicos {
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    section.servicos h2 {
+      color: #D4380E;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    section.servicos table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    section.servicos th, section.servicos td {
+      padding: 10px;
+      border: 1px solid #fff;
+      text-align: left;
+    }
+    section.servicos thead tr {
+      background-color: #D4380E;
+    }
+    section.servicos tbody tr:nth-child(odd) {
+      background-color: #1E1E1E;
+    }
+    section.servicos ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    section.servicos ul li {
+      margin-bottom: 8px;
+    }
+    footer {
+      margin: 40px 0 20px;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="icon-192.png" alt="OverTork Logo" class="logo" />
+  <h1>OverTork</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="agendamento.html">Agendamento</a>
+  <a href="servicos.html">Serviços</a>
+</nav>
+
+<main>
+  <section class="servicos">
+    <h2>Serviços e Planos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Descrição</th>
+          <th>Valor Base</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tork Simples</td>
+          <td>Lavagem externa simples e rápida</td>
+          <td>R$ 60,00</td>
+        </tr>
+        <tr>
+          <td>Tork Completo</td>
+          <td>Lavagem completa externa e interna</td>
+          <td>R$ 140,00</td>
+        </tr>
+        <tr>
+          <td>Tork Polimento</td>
+          <td>Polimento profissional para pintura</td>
+          <td>R$ 280,00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Planos Mensais</h3>
+    <ul>
+      <li><strong>Tork Light:</strong> Lavagem simples mensal - R$ 150,00</li>
+      <li><strong>Tork Full:</strong> Lavagem completa mensal - R$ 350,00</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 OverTork. Todos os direitos reservados.
+</footer>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registrado com sucesso!'))
+        .catch(err => console.error('Falha ao registrar Service Worker:', err));
+    });
+  }
+</script>
+
+</body>
+</html>
