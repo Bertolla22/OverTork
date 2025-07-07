@@ -8,7 +8,6 @@
   <link rel="icon" href="icon-192.png" />
   <meta name="theme-color" content="#D4380E" />
   <style>
-    /* Reset básico */
     * {
       box-sizing: border-box;
     }
@@ -38,42 +37,6 @@
       max-width: 600px;
       margin: 30px auto;
       padding: 0 15px;
-      <section class="servicos" style="max-width:600px; margin: 30px auto; padding: 0 15px; color:#fff;">
-  <h2 style="color:#D4380E; text-align:center;">Serviços e Planos</h2>
-  <table style="width:100%; border-collapse: collapse; margin-top:20px;">
-    <thead>
-      <tr style="background-color:#D4380E;">
-        <th style="padding:10px; border:1px solid #fff;">Serviço</th>
-        <th style="padding:10px; border:1px solid #fff;">Descrição</th>
-        <th style="padding:10px; border:1px solid #fff;">Valor Base</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="background-color:#1E1E1E;">
-        <td style="padding:10px; border:1px solid #fff;">Tork Simples</td>
-        <td style="padding:10px; border:1px solid #fff;">Lavagem externa simples e rápida</td>
-        <td style="padding:10px; border:1px solid #fff;">R$ 60,00</td>
-      </tr>
-      <tr>
-        <td style="padding:10px; border:1px solid #fff;">Tork Completo</td>
-        <td style="padding:10px; border:1px solid #fff;">Lavagem completa externa e interna</td>
-        <td style="padding:10px; border:1px solid #fff;">R$ 140,00</td>
-      </tr>
-      <tr style="background-color:#1E1E1E;">
-        <td style="padding:10px; border:1px solid #fff;">Tork Polimento</td>
-        <td style="padding:10px; border:1px solid #fff;">Polimento profissional para pintura</td>
-        <td style="padding:10px; border:1px solid #fff;">R$ 280,00</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 style="color:#D4380E; margin-top:30px;">Planos Mensais</h3>
-  <ul style="list-style:none; padding:0; margin-top:10px;">
-    <li><strong>Tork Light:</strong> Lavagem simples mensal - R$ 150,00</li>
-    <li><strong>Tork Full:</strong> Lavagem completa mensal - R$ 350,00</li>
-  </ul>
-</section>
-
     }
     section.banner {
       background: #E04A1E;
@@ -89,6 +52,7 @@
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(212, 56, 14, 0.7);
+      margin-bottom: 40px;
     }
     section.agendamento h2 {
       margin-top: 0;
@@ -121,6 +85,39 @@
     }
     form button:hover {
       background-color: #a52b0a;
+    }
+    section.servicos {
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    section.servicos h2 {
+      color: #D4380E;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    section.servicos table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    section.servicos th, section.servicos td {
+      padding: 10px;
+      border: 1px solid #fff;
+      text-align: left;
+    }
+    section.servicos thead tr {
+      background-color: #D4380E;
+    }
+    section.servicos tbody tr:nth-child(odd) {
+      background-color: #1E1E1E;
+    }
+    section.servicos ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    section.servicos ul li {
+      margin-bottom: 8px;
     }
     footer {
       margin: 40px 0 20px;
@@ -168,13 +165,49 @@
       <label for="servico">Serviço</label>
       <select id="servico" name="servico" required>
         <option value="">Selecione...</option>
-        <option value="lavagem-simples">Lavagem Simples</option>
-        <option value="lavagem-completa">Lavagem Completa</option>
-        <option value="polimento">Polimento</option>
+        <option value="tork-simples">Tork Simples</option>
+        <option value="tork-completo">Tork Completo</option>
+        <option value="tork-polimento">Tork Polimento</option>
       </select>
 
       <button type="submit">Enviar Agendamento</button>
     </form>
+  </section>
+
+  <section class="servicos">
+    <h2>Serviços e Planos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Descrição</th>
+          <th>Valor Base</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tork Simples</td>
+          <td>Lavagem externa simples e rápida</td>
+          <td>R$ 60,00</td>
+        </tr>
+        <tr>
+          <td>Tork Completo</td>
+          <td>Lavagem completa externa e interna</td>
+          <td>R$ 140,00</td>
+        </tr>
+        <tr>
+          <td>Tork Polimento</td>
+          <td>Polimento profissional para pintura</td>
+          <td>R$ 280,00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Planos Mensais</h3>
+    <ul>
+      <li><strong>Tork Light:</strong> Lavagem simples mensal - R$ 150,00</li>
+      <li><strong>Tork Full:</strong> Lavagem completa mensal - R$ 350,00</li>
+    </ul>
   </section>
 
   <section class="logos">
@@ -197,7 +230,6 @@
     form.reset();
   });
 
-  // Service Worker (mantém o código do seu PWA)
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js')
